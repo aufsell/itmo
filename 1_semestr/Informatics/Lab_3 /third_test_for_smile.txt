@@ -1,0 +1,22 @@
+3
+\leqslant
+\=-Oleq (\leqslant или \leq)
+\geqslant\geq (\geqslant или \geq)
+{\frac {\partial f\left(x,y,z,\ldots \right)}{\partial y}}(\partial для ∂)
+\left|a+b\ i\right|={\sqr=-Ot {a^{2}+b^{2}}}
+\left|a+b\ i\right|={\sqrt {a^{2}+b^{2}}}
+\int \limits _{0}^{b}x^{2}\,dx={\frac {b^{3}}{3}}
+\int x^{2}\,dx={\frac {x^{3}}{3}}+C
+«Интеграл (от … до …) функции … по (или d)…»
+{\begin{aligned}&{\frac {df}{dx}}\\&f'\left(x\righ=-Ot)\,\\\end{aligned}=-O}	df/d=-Ox
+{\frac {df}{dx}} или 
+f'\left(x\right) означает «(первая) производная функции 
+ffо=-Oxxпопеременнойxx».dcosxdx=−sin
+{\frac {d\cos x}{dx}}=-\sin x
+«Производная … по …»∂f(x,y,z,…)∂y
+{\frac {\part=-Oial f\left(x,y,z,\ldots \right=-O)}=-O{\partial y}}(\partial для ∂)	∂f/∂y	Частная производна=-Oя	
+{\frac {\partial f\left(x,y,z,\ldots \right)}{\partial y}} означает «(первая) частная про=-Oизводная функции 
+ffотпеременныхx,y,z,…
+x,y,z,\ldots по переменнойyy».∂∂y(x2cosx)==d
+dy(x2cosxy)|x=const==-O−x3sin⁡xy 
+{\displaystyle {\begin{aligned}&{\frac {\par=-Otial }{\parti=-Oal y}}\left(x^{2}\cos xy\right)=\\&=\left.{\fr=-Oac {d}{d=-Oy}}\left(x^{2}\cos xy\right)\right|_{x\,=\,\mathrm {const} }\\&=-x^{3}\sin xy\\\end{aligned}}}

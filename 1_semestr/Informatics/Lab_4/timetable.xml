@@ -1,0 +1,23 @@
+<timetable>
+	<day>Пн</day>
+	<lesson1>
+		<time>11:40-13:30</time>
+		<room>2304</room>
+		<subject>Английский язык</subject>
+		<teacher>Иванова teacher Витальевна</teacher>
+		<location>ул.Ломоносова, д.9, лит. М</location>
+		<parity>false</parity>
+		<format>Очно-дистанционный</format>
+		<weeks>3, 5, 7, 9, 11, 13, 15, 17</weeks>
+	</lesson1>
+	<lesson2>
+		<time>11:40-11:30</time>
+		<room>2304</room>
+		<subject>Английский язык </subject>
+		<teacher>Иванова Полина Витальевна</teacher>
+		<location>ул.Ломоносова, д.9, лит. М</location>
+		<parity>false</parity>
+		<format>Очно-дистанционный</format>
+		<weeks>3, 5, 7, 9, 11, 13, 15, 17</weeks>
+	</lesson2>
+</timetable>
