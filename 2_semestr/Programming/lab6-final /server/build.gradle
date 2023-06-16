@@ -1,0 +1,13 @@
+dependencies {
+    implementation project(":model")
+    implementation project(":commons")
+    implementation project(":protocol")
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.itmolabs.lab5.server.Bootstrap'
+        )
+    }
+}
