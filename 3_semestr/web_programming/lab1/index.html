@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка точки в области</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <img class="header__logo" src="img/logo.png" alt="logo">
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item"><a class="header__link" href="#">LabWork 1</a></li>
+                <li class="header__item"><a class="header__link" href="#"><b>Group P3218</b></a></li>
+                <li class="header__item"><a class="header__link" href="#">Levchenko Y.A</a></li>
+                <li class="header__item"><a class="header__link" href="#"><b>Version 2807</b></a></li>
+            </ul>
+        </nav>
+        <a href="https://github.com/aufsell">
+            <img src="img/git_logo.png" alt="github-link" class="header__github__link">
+        </a>
+    </header>
+    
+    <section class="section">
+        <div class="section__text">
+            <h3>Select coordinates</h3>
+            <p class="section__text__transparent">
+                to find out if you are in the area, select the coordinates and press the send button</p>
+        </div>
+        <div class="section__graph"><canvas id="graph"></canvas></div>
+        <div class="section__input__form">
+        <form id="section__input__form" class="section__input__form">
+            <div class="section__input__r">
+                <label for="radius">Input R:</label><br>
+                <div class="section__input__form__r">
+                    <label for="radius1">
+                        <input type="radio" id="radius1" name="radius" value="1" required> 1
+                    </label>
+                    <label for="radius1.5">
+                        <input type="radio" id="radius1.5" name="radius" value="1.5"> 1.5
+                    </label>
+                    <label for="radius2">
+                        <input type="radio" id="radius2" name="radius" value="2"> 2
+                    </label>
+                    <label for="radius2.5">
+                        <input type="radio" id="radius2.5" name="radius" value="2.5"> 2.5
+                    </label>
+                    <label for="radius3">
+                        <input type="radio" id="radius3" name="radius" value="3"> 3
+                    </label>
+                </div>
+            </div>
+
+            <div class="section__input__x">
+                <label for="xCheckbox">Input X:</label><br>
+                <div class="section__input__form__x">        
+                    <input type="checkbox" id="xCheckbox-3" name="xCheckbox" value="-3">
+                    <label for="xCheckbox">-3</label>
+                    <input type="checkbox" id="xCheckbox-2" name="xCheckbox" value="-2">
+                    <label for="xCheckbox2">-2</label>
+                    <input type="checkbox" id="xCheckbox-1" name="xCheckbox" value="-1">
+                    <label for="xCheckbox3">-1</label>
+                    <input type="checkbox" id="xCheckbox0" name="xCheckbox" value="0">
+                    <label for="xCheckbox">0</label>
+                    <input type="checkbox" id="xCheckbox1" name="xCheckbox" value="1">
+                    <label for="xCheckbox2">1</label>
+                    <input type="checkbox" id="xCheckbox2" name="xCheckbox" value="2">
+                    <label for="xCheckbox3">2</label>
+                    <input type="checkbox" id="xCheckbox3" name="xCheckbox" value="3">
+                    <label for="xCheckbox">3</label>
+                    <input type="checkbox" id="xCheckbox4" name="xCheckbox" value="4">
+                    <label for="xCheckbox2">4</label>
+                    <input type="checkbox" id="xCheckbox5" name="xCheckbox" value="5">
+                    <label for="xCheckbox3">5</label>
+                </div>
+                <br>
+            </div>
+            
+            <div class="section__input__y">
+            <label for="yCoordinate">Input Y:</label>
+
+            <div class="section__input__form__y">
+                <input id="yCoordinate" required name="yCoordinate" placeholder="[-5 ... 3]">
+            </div>
+        </div>
+            <button type="submit" id="submit" class="submit__button">Verify</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="section__2">
+        <div class="section__table">
+            <table id="section__table__results">
+                <thead>
+                    <tr>
+                        <th>R</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th>Status</th>
+                        <th>Time</th>
+                        <th>Execution time</th>
+                        </tr>
+                </thead>
+                <tbody>
+                
+                </tbody>
+        </table>
+        </div>  
+        <div class="section__2__text">
+            <h3>On this table </h3>
+            <p class="section__2__text__transparent">you can see more detailed information about the results of your attempt. Click clear if you want to reset everything</p>
+            <button id="clearButton" class="clear__button">Clear</button>
+        </div>
+
+    </section>
+
+    <script type='text/javascript' src="js/graph.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+</body>
+</html>
+
