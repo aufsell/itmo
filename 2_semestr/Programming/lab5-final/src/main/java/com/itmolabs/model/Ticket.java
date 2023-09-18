@@ -4,10 +4,11 @@ import com.itmolabs.serializers.LocalDateAdapter;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.Objects;
-
+@XmlType()
 @XmlRootElement(name = "person")
 public class Ticket implements Comparable<Ticket> {
 

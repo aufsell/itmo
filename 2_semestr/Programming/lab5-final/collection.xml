@@ -2,20 +2,20 @@
 <collectionWrapper>
     <ticket>
         <coordinates>
-            <x>1.0</x>
-            <y>1.0</y>
+            <x>2.0</x>
+            <y>2.0</y>
         </coordinates>
-        <creationDate>2023-05-12</creationDate>
-        <discount>1.0</discount>
-        <id>1</id>
-        <name>1</name>
-        <price>1</price>
-        <type>VIP</type>
+        <creationDate>2023-06-17</creationDate>
+        <discount>2.0</discount>
+        <id>4</id>
+        <name>2</name>
+        <price>2</price>
+        <type>USUAL</type>
         <venue>
-            <capacity>1</capacity>
-            <id>1</id>
-            <name>q</name>
-            <type>LOFT</type>
+            <capacity>2</capacity>
+            <id>5</id>
+            <name>fa</name>
+            <type>THEATRE</type>
         </venue>
     </ticket>
     <ticket>
@@ -52,6 +52,24 @@
             <id>5</id>
             <name>updated</name>
             <type>THEATRE</type>
+        </venue>
+    </ticket>
+    <ticket>
+        <coordinates>
+            <x>1.0</x>
+            <y>1.0</y>
+        </coordinates>
+        <creationDate>2023-05-12</creationDate>
+        <discount>1.0</discount>
+        <id>1</id>
+        <name>1</name>
+        <price>1</price>
+        <type>VIP</type>
+        <venue>
+            <capacity>1</capacity>
+            <id>1</id>
+            <name>q</name>
+            <type>LOFT</type>
         </venue>
     </ticket>
 </collectionWrapper>

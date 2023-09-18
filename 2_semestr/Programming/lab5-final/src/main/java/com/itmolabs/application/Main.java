@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         try {
             System.out.println("Lab work #5 implementation has been started!");
-            CollectionManager collectionManager = CollectionManager.getInstance(System.getenv("FILEPATH"));
+            CollectionManager collectionManager = CollectionManager.getInstance("collection.xml");
             new CommandInvoker(collectionManager).run();
         } catch (Exception e) {
             e.printStackTrace();
