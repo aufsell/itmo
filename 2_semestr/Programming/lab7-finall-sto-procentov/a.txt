@@ -1,0 +1,9 @@
+insert 1,1.0,1.gff0,2023-09-30-03:01,1,1.0,ghgh,test,1,LOFT
+inser 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+insert 1,1.0,1.0,2023-09-30-03:01,1,1.0,VIP,test,1,LOFT
+execute_script b.txt

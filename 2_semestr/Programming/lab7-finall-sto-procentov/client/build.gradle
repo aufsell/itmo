@@ -1,0 +1,26 @@
+import com.github.jengelman.gradle.plugins.shadow.transformers.Log4j2PluginsCacheFileTransformer
+
+dependencies {
+    implementation project(":commons")
+    implementation project(":protocol")
+}
+
+tasks {
+    shadowJar {
+        transform new Log4j2PluginsCacheFileTransformer()
+
+        def output = rootProject.ext.get('output')
+        destinationDirectory = file("$rootDir/$output")
+
+        archiveFileName = "Client.jar"
+
+        manifest {
+            attributes(
+                    "Multi-Release": "true",
+                    "Main-Class": "com.itmolabs.lab5.client.Bootstrap"
+            )
+        }
+
+        mergeServiceFiles()
+    }
+}

@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "7.0.0" apply false
+}
+
+allprojects {
+    group = 'com.itmolabs.lab5'
+    version = '1.0-SNAPSHOT'
+}
+
+ext.set('output', findProperty("gradle.output") ?: "../output/")
+
+configure(allprojects) {
+    apply plugin: "java"
+    apply plugin: "java-library"
+    apply plugin: "com.github.johnrengelman.shadow"
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        implementation 'javax.xml.bind:jaxb-api:2.3.1'
+        implementation 'javax.activation:activation:1.1'
+        implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.1'
+
+        implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+        implementation 'com.google.guava:guava:31.1-jre'
+
+        implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+        implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    }
+
+
+    tasks {
+        shadowJar {
+            exclude 'META-INF/DEPENDENCIES'
+            exclude 'META-INF/LICENSE'
+            exclude 'META-INF/LICENSE.txt'
+            exclude 'META-INF/NOTICE'
+            exclude 'META-INF/NOTICE.txt'
+            exclude 'META-INF/maven/**'
+        }
+
+        tasks.withType(JavaCompile).configureEach {
+            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_17
+            options.encoding = "UTF-8"
+        }
+
+        build {
+            dependsOn(shadowJar)
+        }
+
+        test {
+            useJUnitPlatform()
+        }
+    }
+
+}
