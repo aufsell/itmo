@@ -1,13 +1,19 @@
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const pointForm = document.getElementById('section__input__form');
   const resultsTable = document.getElementById('section__table__results');
   const clearButton = document.getElementById('clearButton');
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   const radiusRadios = document.querySelectorAll('input[name="radius"]');
+
+
+  if (localStorage.getItem('session')) {
+    resultsTable.querySelector('tbody').innerHTML = localStorage.getItem('session');
+  }
   
-
-
-
 
   pointForm.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -28,10 +34,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const yCoordinate = parseFloat(yCoordinateInput.value);
 
-      if (isNaN(yCoordinate) || yCoordinate < -5 || yCoordinate > 3 || Math.abs(yCoordinate-3)<0.0000000001) {
+      if (yCoordinateInput.value.includes('.') && yCoordinateInput.value.split('.')[1].length > 9) {
+        alert('Максимально возможная точность после запятой - 9 символов');
+        return;
+    }
+    if (yCoordinateInput.value.includes(',')) {
+        alert('Введите через точку!!!');
+        return;
+    }
+
+      if (isNaN(yCoordinate) || yCoordinate < -5 || yCoordinate > 3) {
           alert('Пожалуйста, введите корректное числовое значение Y-координаты в диапазоне от -5 до 3.');
           return;
       }
+
+
+
+
       const xCoordinate = parseFloat(xCheckbox.value);
       const radius = selectedRadius.value;
 
@@ -59,7 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
           data: { radius, xCoordinate, yCoordinate },
           success: function (response) {
               // Добавляем результат в таблицу
+              
               resultsTable.querySelector('tbody').innerHTML += response;
+              localStorage.setItem('session', resultsTable.querySelector('tbody').innerHTML);
 
           },
           error: function () {
@@ -73,6 +94,7 @@ clearButton.addEventListener('click', function () {
     const tbody = resultsTable.querySelector('tbody');
 
     tbody.innerHTML = ''; // Очищаем все строки внутри tbody
+    localStorage.removeItem('session')
 });
 
 

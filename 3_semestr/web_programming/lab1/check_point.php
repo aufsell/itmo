@@ -57,7 +57,7 @@ function checkPointInArea($r, $x, $y) {
         return 'Success';}
     else{
         return 'Failed';
-    } // Пример, замените на вашу логику
+    } 
 }
 ?>
 

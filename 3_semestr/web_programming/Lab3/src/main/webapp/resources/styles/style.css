@@ -1,0 +1,304 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;}
+
+.container {
+    max-width: 1340px;
+    width: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 50px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.header-logo {
+    max-width: 150px;
+    min-height: 60px;
+    margin-right: 20px;
+
+}
+
+.header-button {
+    display: flex;
+    max-width: 470px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bi {
+    color: #999;
+    margin: 1rem;
+}
+
+.info-elem {
+    border: 1px solid #E6E6E6;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    color: #999;
+    padding-right: 1px;
+}
+
+
+.info-elem>.ip {
+    margin-right: 1rem;
+}
+
+.info-elem>.ip>.is {
+    color: #242424;
+
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.section-descripton {
+    text-align: center;
+    margin-top: 140px;
+}
+
+.section-descripton>.asd {
+    color: #242424;
+
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -1.28px;
+}
+
+.section-descripton>p {
+    color: #999;
+
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.future {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+}
+
+.future>.card {
+    border-radius: 20px;
+    border: 2px solid #E6E6E6;
+    transition: all 0.3s ease;
+    padding-left: 30px;
+    padding-top: 25px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+
+
+.future>.card>.card-title {
+    color: #242424;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 48px;
+    letter-spacing: -0.96px;
+    margin-bottom: 5px;
+
+}
+
+.future>.card>.p {
+    color: #999;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 13px;
+}
+
+.bi-arrow-right{
+    color: white;
+    margin: 0.3rem;
+}
+
+.card-link {
+    background: #3831fe;
+    border-radius: 12px;
+    display: inline-flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    justify-self: end;
+
+}
+
+.card-link>a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
+
+.card:hover{
+    border: 2px solid #3831fe;
+    transform: scale(1.05)
+}
+
+
+
+
+/* IPAD */
+
+@media screen and (width >= 750px) and (width <= 1200px){
+    .card-link{
+        max-height: 19px;
+    }
+
+    .section-descripton {
+        text-align: center;
+        margin-top: 110px;
+    }
+}
+
+
+@media screen and (width >= 500px) and (width <= 750px){
+
+    .card-link{
+        max-height: 19px;
+    }
+
+    .section-descripton {
+        text-align: center;
+        margin-top: 110px;
+    }
+
+    .header-logo {
+        max-width: 105px;
+        min-height: 32px;
+    }
+
+    .header-button {
+        max-width: 320px;
+    }
+
+    .bi {
+        color: #999;
+        margin: 0.6rem;
+    }
+
+    .info-elem {
+        border-radius: 8px;
+        font-size: 9px;
+
+    }
+
+    .info-elem>p {
+        margin-right: 0.8rem;
+    }
+
+    .info-elem>p>span {
+        font-size: 12px;
+    }
+
+    .header-github>a>img {
+        max-width: 38px;
+        max-height: 38px;
+    }
+}
+
+
+/* MOBILE */
+
+@media screen and (width<500px) {
+
+    .section-descripton {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .header-logo {
+        max-width: 75px;
+        min-height: 32px;
+    }
+
+    .header-button {
+        max-width: 250px;
+    }
+
+    .bi {
+        color: #999;
+        margin: 0.5rem;
+    }
+
+    .info-elem {
+        border-radius: 5px;
+        font-size: 6px;
+
+    }
+
+    .info-elem>p {
+        margin-right: 1rem;
+    }
+
+    .info-elem>p>span {
+        font-size: 9px;
+    }
+
+    .header-github>a>img {
+        max-width: 32px;
+        max-height: 32px;
+    }
+
+    .future{
+        grid-template-columns: repeat(1, 1fr);
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+
+    .section-descripton>h {
+        font-size: 32px;
+    }
+
+    .section-descripton>p {
+        font-size: 16px;
+    }
+
+    .future>.card>h1 {
+        font-size: 24px;
+        justify-self: center;
+    }
+
+    .future>.card>p {
+        font-size: 12px;
+        justify-self: center;
+        text-align: center;
+    }
+
+
+    .card-link {
+        justify-self: center;
+    }
+}

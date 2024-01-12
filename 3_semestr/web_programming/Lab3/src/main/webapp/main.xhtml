@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<h:head>
+    <title>Web Lab 3</title>
+    <h:outputStylesheet library="styles" name="main.css"/>
+
+</h:head>
+<h:body>
+    <h:panelGroup layout="block" styleClass="header-text">
+        <h:outputText value="Select coordinates"/>
+        <br></br>
+        <h:outputText value="To find out if you are in the area, select coordinates and press the send button" styleClass="tf"/>
+    </h:panelGroup>
+
+<div class="section-center" style="margin-left: 300px">
+    <h:panelGroup id="set-canvas" layout="block">
+        <canvas id="canvas" class="draw">Unsupported</canvas>
+    </h:panelGroup>
+
+
+    <div class="form-container">
+        <h:form id="myForm">
+
+            <h:outputLabel for="x" value="Coordinate X (-5; 3)"/>
+            <h:inputText id="x" styleClass="coords-input" value="#{xBean.XValue}"
+                         required="true" maxlength="7"
+                         requiredMessage="Value X is required"
+                         validatorMessage="The value must be from -5 to 3">
+                <f:converter converterId="javax.faces.Double"/>
+                <f:validateDoubleRange minimum="-5" maximum="3"/>
+            </h:inputText>
+
+            <h:outputLabel for="y" value="Coordanate Y"/>
+            <p:spinner id="y" value="#{yBean.YValue}" min="-2" max="2" styleClass="coords-input">
+            </p:spinner>
+
+            <h:outputLabel for="r" value="Range R"/><br/>
+            <h:panelGrid columns="1" style="margin-bottom: 10px" id="r">
+                <p:inputText id="decimal" value="#{rBean.RValue}"/>
+                <p:slider for="decimal" minValue="1" maxValue="5" step="0.5" range="false" onSlideEnd="updateCanvas();"/>
+            </h:panelGrid>
+
+
+            <div class="xz">
+            <h:commandButton value="Send" styleClass="submit-btn">
+                <f:ajax execute="@form" listener="#{resultsControllerBean.addResult(xBean.XValue, yBean.YValue, rBean.RValue, 'shit')}" render="@form results-table"/>
+            </h:commandButton>
+
+
+                <h:commandButton value="Clear" styleClass="abstract-util-button clear-button">
+                    <f:ajax execute="@form" listener="#{resultsControllerBean.clearResults(rBean.RValue)}" render="@form results-table"/>
+                </h:commandButton>
+                <h:button outcome="returnToIndex" value="Back" styleClass="abstract-util-button" style="background-color: #3831fe;
+    color: white; "/>
+
+            </div>
+
+            <p:remoteCommand name="updateRValueOnServer" action="#{resultsControllerBean.updateRValue(rBean.RValue)}" update="myForm"/>
+
+            <p:remoteCommand name="restorePoints" action="#{resultsControllerBean.generateRedrawScript()}"
+                             update="myForm"/>
+
+        </h:form>
+    </div></div>
+
+    <h:dataTable styleClass="resultsTable" id="results-table" var="result" value="#{resultsControllerBean.results}">
+        <h:column styleClass="new-cell">
+            <f:facet name="header">X</f:facet>
+            #{result.x}
+        </h:column>
+
+        <h:column styleClass="new-cell">
+            <f:facet name="header">Y</f:facet>
+            #{result.y}
+        </h:column>
+
+        <h:column styleClass="new-cell">
+            <f:facet name="header">R</f:facet>
+            #{result.r}
+        </h:column>
+
+        <h:column styleClass="new-cell">
+            <f:facet name="header">Result</f:facet>
+            #{result.result ? "Попал" : "Ты стреляешь мимо"}
+        </h:column>
+    </h:dataTable>
+
+
+    <h:outputScript>
+        function updateCanvas() {
+            var rValue = $('#myForm\\:decimal').val();
+            drawCoordsPlane(rValue);
+            updateRValueOnServer();
+            restorePoints();
+        }
+    </h:outputScript>
+
+    <h:outputScript library="scripts" name="drawing.js"/>
+
+
+    <h:outputScript>
+        drawCoordsPlane("#{rBean.RValue == null ? 0 : rBean.RValue}")
+        restorePoints();
+    </h:outputScript>
+
+    <h:form id="graph-form">
+        <h:inputHidden id="xValue" value="#{coordinateHandlerBean.x}" />
+        <h:inputHidden id="yValue" value="#{coordinateHandlerBean.y}" />
+        <p:remoteCommand name="sendCoordinatesToServer"
+                         action="#{resultsControllerBean.addResult(coordinateHandlerBean.x, coordinateHandlerBean.y, rBean.RValue, 'shit')}"
+                         update="xValue yValue results-table myForm" />
+    </h:form>
+
+</h:body>
+</html>
+
+
